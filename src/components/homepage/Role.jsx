@@ -1,3 +1,7 @@
-export default function Role() {
+import React from 'react';
 
-}
+const Role= () => {
+
+};
+
+export default Role;

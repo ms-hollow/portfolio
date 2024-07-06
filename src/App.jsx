@@ -1,18 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import NavBar from './components/ui/NavBar';
+import Hero from './components/homepage/Hero';
+import Role from './components/homepage/Role';
+import About from './components/homepage/About';
+import Services from './components/homepage/Services';
+import Projects from './components/homepage/Projects';
+import Contact from './components/homepage/Contact'
+
+
+const App = () => {
+ 
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionRefs = useRef([]); // Creating a sectionRefs array
+
+  // Scrub animation of section headings
+  useEffect(() => {
+    //TODO Learn useContext and useRef here
+    const sectionHeadings = document.querySelectorAll(".section-heading");
+    sectionHeadings.forEach((heading) => {
+      const headings = heading.querySelectorAll(".heading");
+
+      headings.forEach((individualHeading) => {
+        ScrollTrigger.create({
+          trigger: heading,
+          start: "top 550px",
+          end: "bottom 550px",
+          animation: gsap.to(individualHeading, {
+            opacity: 1,
+            y: 0,
+            ease: "power4.out",
+            duration: 1,
+          }),
+          toggleActions: "play none none none",
+
+        });
+        ScrollTrigger.refresh()
+      });
+    });
+  }, []);
+
+  
 
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
-  )
-}
+    <div className="bg-secondary-100">
+      <NavBar sectionRefs={sectionRefs.current} />{" "}
+      {/* passing sectionRefs props to give access to Navbar, Navbar can then access the props which have access to the array of sectionRef and loop over it */}
+      <Hero />
+      <main className="px-5 md:px-10 xl:px-20 2xl:px-28">
+        <Role forwardedRef={(el) => (sectionRefs.current[0] = el)} />{" "}
+        <About />
+        <Services />
+        <Projects forwardedRef={(el) => (sectionRefs.current[1] = el)} />
+        <Contact />
+      </main>
+    </div>
+  );
+};
 
-export default App
+export default App;
