@@ -74,7 +74,7 @@ export default function NavBar({ sectionRefs }) {
           className="button group relative hover:bg-transparent"
           href="#contact"
         >
-          <span className="relative w-fit bg-accent text-text-c1 px-4 py-2 rounded-full font-general font-medium text-body-3 hover:bg-yellow-600 text-left">
+          <span className="relative w-fit bg-accent text-text-c1 px-4 py-2 rounded-full font-general font-medium text-body-3 hover:bg-secondary text-left">
             <span className="absolute bottom-0 left-0 w-full h-[0.125em] bg-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             <span>Let&apos;s Talk.</span>
           </span>
