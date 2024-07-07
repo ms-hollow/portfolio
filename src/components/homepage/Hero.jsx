@@ -10,18 +10,6 @@ export default function Hero() {
   const loc = useRef(null);
   const scrollMore = useRef(null);
 
-  // useEffect(() => {
-  //   const tl = gsap.timeline({ delay: 0.5 }); // Delay added to wait for text and image to load
-
-  //   tl.to(titles.current, { y: 0, duration: 2, ease: "power4.inOut" })
-  //     .to(img.current, { y: 0, duration: 2, ease: "power4.inOut" }, "-=2")
-  //     .fromTo(
-  //       underline.current,
-  //       { scaleX: 0 },
-  //       { scaleX: 1, duration: 2.35, ease: "power4.inOut" },
-  //       "-=1.5"
-  //     );
-  // }, [titles.current, img.current, underline.current]); 
   useEffect(() => {
     gsap.set([loc.current, scrollMore.current], { opacity: 1 });
     const tl = gsap.timeline({ delay: 0.5 });
