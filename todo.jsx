@@ -7,5 +7,7 @@
 /**
  * TODO: 
  * * Services - still need to modify gsap 
- * * Projects -
+ * * Projects 
+ *  TODO - ipunin lahat ng pictures then edit
+ *  TODO - lagay ang pictures sa project
  */

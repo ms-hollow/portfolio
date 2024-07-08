@@ -24,8 +24,7 @@ export default function Services() {
         "NextJs",
         "Truffle",
         "Bootstrap",
-        "Tailwind Css",
-        "Tkinter/Pygame/Turtle",
+        "Tailwind Css"
     ];
 
     const designToolKit = [

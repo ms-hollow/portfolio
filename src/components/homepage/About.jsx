@@ -13,6 +13,7 @@ export default function About() {
   useEffect(() => {
     ScrollTrigger.create({
       trigger: aboutSection.current,
+      // markers: true,
       start: "top 400px",
       animation: gsap
         .timeline()
