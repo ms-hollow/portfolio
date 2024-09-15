@@ -3,12 +3,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 import NavBar from './components/ui/NavBar';
 import Hero from './components/homepage/Hero';
 import Role from './components/homepage/Role';
 import About from './components/homepage/About';
 import Services from './components/homepage/Services';
-import Projects from './components/homepage/Projects';
+import Works from './components/homepage/Projects';
 import Contact from './components/homepage/Contact'
 
 
@@ -48,14 +49,14 @@ const App = () => {
 
   return (
     <div className="bg-secondary-100">
-      <NavBar sectionRefs={sectionRefs.current} />{" "}
-      {/* passing sectionRefs props to give access to Navbar, Navbar can then access the props which have access to the array of sectionRef and loop over it */}
+      <NavBar sectionRefs={sectionRefs.current} />
+     
       <Hero />
       <main className="px-5 md:px-10 xl:px-20 2xl:px-28">
         <Role forwardedRef={(el) => (sectionRefs.current[0] = el)} />{" "}
         <About />
         <Services />
-        <Projects forwardedRef={(el) => (sectionRefs.current[1] = el)} />
+        <Works forwardedRef={(el) => (sectionRefs.current[1] = el)} />
         <Contact />
       </main>
     </div>

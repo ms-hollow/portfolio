@@ -2,7 +2,7 @@ import Projects from "../ui/ProjectUI";
 import Heading from "../ui/Heading";
 import image from "../../assets/icons/akkey.webp"
 
-export default function Projects({ forwardedRef }) {
+export default function Works({ forwardedRef }) {
   return (
     <section
       ref={forwardedRef}
