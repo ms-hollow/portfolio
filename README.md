@@ -8,4 +8,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 - To install the vite framework, paste this command, **'npm install vite --save-dev'** to your local development.
-- To run, type **'npm run dev' **
+- To run, type **npm run dev**
